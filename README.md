@@ -7,7 +7,7 @@ Code accompanying **Chapter 3** of the PhD thesis *"Diffusion-Based Molecular Co
 - **Conference** (preliminary version): Arjmandi, H., Zoofaghari, M., Rezaei, M., et al. "Diffusive Molecular Communication with a Spheroidal Receiver for Organ-on-Chip Systems." *IEEE International Conference on Communications (ICC)*, Roma, Italy, 2023. [DOI](https://ieeexplore.ieee.org/abstract/document/10279128)
 
 ## Overview
-This repository implements a generalized analytical framework for diffusion-based molecular communication where both transmitter and receiver are modelled as **spheroids** — 3-D multicellular aggregates of the kind used in organ-on-chip experiments — rather than idealized point sources or sinks. Each spheroid is treated as a homogenized porous medium, characterized by a porosity parameter and an effective diffusion coefficient, with a boundary condition that permits a concentration discontinuity at the spheroid surface.
+This repository implements an analytical framework for diffusion-based molecular communication where both transmitter and receiver are modelled as **spheroids** — 3-D multicellular aggregates of the kind used in organ-on-chip experiments — rather than idealized point sources or sinks. Each spheroid is treated as a homogenized porous medium, characterized by a porosity parameter and an effective diffusion coefficient, with a boundary condition that permits a concentration discontinuity at the spheroid surface.
 
 The Green's function for concentration (GFC) is derived analytically, in series form, for both a point source releasing molecules inside a spheroidal transmitter and a point source diffusing into a spheroidal receiver. These are combined into an end-to-end spheroid-to-spheroid (S2S) channel model, and the resulting communication system's bit error rate (BER) is evaluated under on-off keying (OOK) with inter-symbol interference (ISI).
 
@@ -31,7 +31,6 @@ Each `src/` function is self-contained and solves one stage of the boundary-valu
 ## Requirements
 - MATLAB R2021b or later
 - Statistics and Machine Learning Toolbox (for `poisscdf` in `compute_ber_vs_timeslot.m`)
-- No Communications Toolbox dependency — bit-pattern enumeration for the ISI analysis uses base-MATLAB `bitget`
 
 ## Usage
 1. Open MATLAB and navigate to the repository root.
@@ -65,19 +64,16 @@ Key parameters that can be adjusted at the top of `main_s2s_ber_analysis.m`:
 
 ## Citation
 ```bibtex
-@article{rezaei2024spheroidal,
-  author={Rezaei, Mitra and Arjmandi, Hamidreza and Zoofaghari, Mohammad and
-          Kanebratt, Kajsa and Vilén, Liisa and Janzén, David and
-          Gennemark, Peter and Noel, Adam},
-  journal={IEEE Transactions on Molecular, Biological, and Multi-Scale Communications},
-  title={Spheroidal Molecular Communication via Diffusion: Signaling Between
-         Homogeneous Cell Aggregates},
+@ARTICLE{10438024,
+  author={Rezaei, Mitra and Arjmandi, Hamidreza and Zoofaghari, Mohammad and Kanebratt, Kajsa and Vilén, Liisa and Janzén, David and Gennemark, Peter and Noel, Adam},
+  journal={IEEE Transactions on Molecular, Biological, and Multi-Scale Communications}, 
+  title={Spheroidal Molecular Communication via Diffusion: Signaling Between Homogeneous Cell Aggregates}, 
   year={2024},
   volume={10},
   number={1},
-  pages={197--210},
-  doi={10.1109/TMBMC.2024.3366420}
-}
+  pages={197-210},
+  keywords={Transmitters;Mathematical models;Biological system modeling;Transceivers;Tumors;Molecular communication;Green's function methods;Bit error rate;Molecular communication;spheroid;organ-on-chip;diffusion;spheroidal communication;realistic transceiver},
+  doi={10.1109/TMBMC.2024.3366420}}
 ```
 
 ## Author
